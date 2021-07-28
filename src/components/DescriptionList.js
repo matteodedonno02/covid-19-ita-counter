@@ -9,6 +9,7 @@ export default function Example() {
         fetch("https://api.covid19api.com/country/italy")
             .then(response => response.json())
             .then(data => setData(data[data.length - 1]))
+            .then(console.log(data))
     }, [])
 
     return (
@@ -16,7 +17,6 @@ export default function Example() {
             <div className="bg-white shadow overflow-hidden sm:rounded-lg">
                 <div className="px-4 py-5 sm:px-6">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">Dati Covid</h3>
-                    <p className="mt-1 max-w-2xl text-sm text-gray-500">Dati relativi al giorno</p>
                 </div>
                 <div className="border-t border-gray-200">
                     <dl>
